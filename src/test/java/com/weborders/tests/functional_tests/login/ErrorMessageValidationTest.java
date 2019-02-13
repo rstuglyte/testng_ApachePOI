@@ -10,7 +10,7 @@ import static org.testng.Assert.assertEquals;
 
 public class ErrorMessageValidationTest extends TestBase {
 
-    @Test
+    @Test(groups = "regression")
     public void wrongEmailTest() {
         extentLogger = report.createTest("Wrong email test");
         extentLogger.info("Entering login information");
@@ -19,11 +19,11 @@ public class ErrorMessageValidationTest extends TestBase {
         String actualError = pages.login().errorMessage.getText();
         extentLogger.info("Verifying error message");
         assertEquals(actualError, LOGIN_ERROR_MESSAGE);
-        extentLogger .pass("Passed:Wrong email test");
+        extentLogger.pass("Passed:Wrong email test");
 
     }
 
-    @Test
+    @Test(groups = "regression")
     public void wrongPasswordTest() {
         extentLogger = report.createTest("Wrong password test");
         extentLogger.info("Entering login information");
